@@ -44,6 +44,10 @@ resource "aws_eks_addon" "ebs-csi" {
 
 module "efs_csi_policy" {
   source = "terraform-aws-modules/iam/aws//modules/iam-policy"
+
+  name_prefix = "${var.resource_prefix}-${var.deployment_name}-${var.venue}-"
+  description = "EFS CSI policy"
+
   policy = <<EOF
 {
   "Version": "2012-10-17",
