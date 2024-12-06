@@ -43,7 +43,7 @@ resource "aws_eks_addon" "ebs-csi" {
 # EFS CSI add on
 
 module "efs_csi_policy" {
-  source = "terraform-aws-modules/iam/aws/modules/iam-policy"
+  source = "terraform-aws-modules/iam/aws//modules/iam-policy"
   policy = <<EOF
 {
   "Version": "2012-10-17",
