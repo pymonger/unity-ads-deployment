@@ -35,6 +35,7 @@ resource "helm_release" "jupyter_helm" {
     aws_eks_addon.ebs-csi,
     module.efs_csi_irsa_role,
     module.ebs_csi_irsa_role,
+    kubernetes_persistent_volume.dev_support_shared_volume,
     null_resource.eks_post_deployment_actions
   ]
 }
